@@ -1,0 +1,8 @@
+<article class="overlay">
+  <section>
+    <div class="overlay-container" (click)="clickInside($event)">
+      <div class="btn" (click)="goBack($event)">Go Back</div>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</article>

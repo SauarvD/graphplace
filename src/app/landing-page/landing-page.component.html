@@ -1,0 +1,16 @@
+<article class="landing-page">
+  <header>
+    D3 GRAPHS
+  </header>
+  <section>
+    <div class="graphs-container" *ngFor="let data of graphData" (click)="navigateTo(data.value)">
+      <img src={{data.image}} alt="" class="graphs-image"/>
+      <div class="graphs-name">
+        {{data.title}}
+      </div>
+    </div>
+  </section>
+  <section class="graphs-view">
+    <router-outlet></router-outlet>
+  </section>
+</article>

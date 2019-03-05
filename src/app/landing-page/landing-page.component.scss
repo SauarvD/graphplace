@@ -1,0 +1,42 @@
+.landing-page{
+    background-image: linear-gradient(135deg, #1c2128,#231f1f,#696565);
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1.5em;
+    box-sizing: border-box;
+    header{
+        display: flex;
+        padding: 1em;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: #fff;
+        letter-spacing: 0.1em;
+        font-family: ex2-extralight;
+    }
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .graphs-container{
+        width: 20em;
+        height: 16em;
+        border: 1px solid #fff;
+        margin-bottom: 2em;
+        cursor: pointer;
+        position: relative;
+        .graphs-name{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            background: #fff;
+        }
+    }
+    .graphs-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
