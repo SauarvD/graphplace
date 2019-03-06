@@ -11,32 +11,32 @@ export class LandingPageComponent implements OnInit {
   public graphData:any=[
     {
       title:"Bar Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/bar.png",
       value: 'bar'
     },
     {
       title:"Pie Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/pie.png",
       value: 'pie'
     },
     {
       title:"Donut Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/donut.png",
       value: 'donut'
     },
     {
       title:"Line Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/line.png",
       value: 'line'
     },
     {
       title:"Area Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/area.png",
       value: 'area'
     },
     {
       title:"Bubble Chart",
-      image:"../../assets/images/image.svg",
+      image:"../../assets/images/bubble.png",
       value: 'bubble'
     }
   ]

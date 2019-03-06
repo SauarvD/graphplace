@@ -62,7 +62,7 @@ export class BubbleComponent implements OnInit {
                 .append("g")
                 .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
-    var radiusScale = d3.scaleSqrt().domain([1, 400]).range([10, 80 ]);
+    var radiusScale = d3.scaleSqrt().domain([1, d3.max(this.graphData.items, function(d) { return d.count; })]).range([10, 80]);
 
     var simulation = d3.forceSimulation()
                         .force("x", d3.forceX(width/2).strength(0.05))
@@ -81,7 +81,7 @@ export class BubbleComponent implements OnInit {
         .attr("r", function(d){
           return radiusScale(d.count)
         })
-        .attr("fill", "lightblue")
+        .attr("fill", "#EB9A72")
         .on('mousemove', function(d){
           d3.select(this).transition()
                           .duration(800)
@@ -92,48 +92,25 @@ export class BubbleComponent implements OnInit {
           d3.select(this).transition()
                           .duration(800)
                           .attr("r", radiusScale(d.count))
-                          .style("fill","steelblue")
+                          .style("fill","EB9A72")
         })
-    
-
-    // var circles = svg.selectAll(".artist")
-    //                   .data(this.graphData.items)
-    //                   .enter().append("circle")
-    //                   .attr("class", "artist")
-    //                   .attr("r", function(d){
-    //                     return radiusScale(d.count)
-    //                   })
-    //                   .attr("fill", "lightblue")
-    //                   .on('mousemove', function(d){
-    //                     d3.select(this).transition()
-    //                                     .duration(800)
-    //                                     .attr("r", radiusScale(d.count) + 5)
-    //                                     .style("fill","orange")
-    //                   })
-    //                   .on('mouseout', function(d){
-    //                     d3.select(this).transition()
-    //                                     .duration(800)
-    //                                     .attr("r", radiusScale(d.count))
-    //                                     .style("fill","steelblue")
-    //                   });
-                  
-    // circles.append('text')
-    //       .attr("text-anchor", "middle")
-    //       .attr("x", function(d) { return 10; })
-    //       .attr("y", 10)
-    //       .text(function(d) { return d.text; } );  
+        
+    g.append('text')
+      .attr('text-anchor','middle')
+      .attr("dx", 0)
+      .attr("dy", ".35em")
+      .text(function(d){
+        return d.text;
+      })
+      .attr('class','bubbleText')
                     
     simulation.nodes(this.graphData.items)
               .on('tick', ticked)
 
-    function ticked(){
-      
-      g.enter().select('circle')
-      .attr("cx", function(d){
-        return d.x
-      })
-      .attr("cy", function(d){
-        return d.y
+    function ticked(){ 
+      g.attr("transform", function (d) {
+        var k = "translate(" + d.x + "," + d.y + ")";
+        return k;
       })
     }   
 

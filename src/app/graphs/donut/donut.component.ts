@@ -104,9 +104,9 @@ export class DonutComponent implements OnInit {
     g.append("path")
       .style("fill", function(d,i) { return color[i]; })
       .transition().delay(function(d,i) {
-        return i * 400; 
+        return i * 200; 
       })
-      .duration(400)
+      .duration(200)
       .attrTween('d', function(d){
         var i = d3.interpolate(d.startAngle + 0.1, d.endAngle);
         return function(t) { 
@@ -119,7 +119,7 @@ export class DonutComponent implements OnInit {
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
 	  .transition()
-	  .delay(1800)
+	  .delay(1400)
       .text(function(d) { return d.data.value + "%"; });
 
       d3.selectAll("path").on("mousemove", function(d) {

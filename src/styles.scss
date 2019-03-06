@@ -323,7 +323,7 @@ div.lineTooltip {
 }
 
 circle {
-    fill: steelblue;
+    fill: #EB9A72;
     stroke: #aaa;
 }
 
@@ -338,5 +338,8 @@ circle {
 }
 
 .bubbleText{
-    text-anchor: middle
+    text-anchor: middle;
+    font-family: ex2-light;
+    letter-spacing: 0.1rem;
+    fill: #fff;
 }
