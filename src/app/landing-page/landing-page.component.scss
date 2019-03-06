@@ -23,7 +23,6 @@
     .graphs-container{
         width: 20em;
         height: 16em;
-        border: 1px solid #fff;
         margin-bottom: 2em;
         cursor: pointer;
         position: relative;
@@ -31,7 +30,11 @@
             position: absolute;
             width: 100%;
             bottom: 0;
+            text-align: center;
             background: #fff;
+            padding: 0.5em 0;
+            letter-spacing: 1px;
+            font-family: ex2-regular;
         }
     }
     .graphs-image{
